@@ -55,13 +55,13 @@ const TaskBar = ({
   programs,
   programsData,
   onIconClick,
-  onMindowsClick,
+  onLindowsClick,
   onInstanceClick,
   onCloseInstance,
 }) => (
   <div className="TaskBar">
     <div className="TaskBar-left">
-      <div className="TaskBar-mindows-icon" onClick={onMindowsClick}>
+      <div className="TaskBar-lindows-icon" onClick={onLindowsClick}>
         <GrWindows />
       </div>
       <div className="TaskBar-searchbar">

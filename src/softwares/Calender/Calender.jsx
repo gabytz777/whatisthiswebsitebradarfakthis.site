@@ -5,7 +5,7 @@ const Calender = () => (
   <div className="Calender">
     <div className="Calender-leftbar">
       <VscDebug />
-      <p>Oops! Mindows must be broken!!</p>
+      <p>Oops! Lindows must be broken!!</p>
     </div>
     <div className="Calender-rightbar">
       <div>

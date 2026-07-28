@@ -120,7 +120,7 @@ const Desktop = ({ activeUser }) => {
             programsData={programsData}
             onInstanceClick={(pId) => onSelectFromTaskBar(pId)}
             onIconClick={(app) => onStartNewProgram(app)}
-            onMindowsClick={() => toggleStartMenu(!startMenu)}
+            onLindowsClick={() => toggleStartMenu(!startMenu)}
             onCloseInstance={(pId) => dispatch(terminateProgram(pId))}
           />
         </>

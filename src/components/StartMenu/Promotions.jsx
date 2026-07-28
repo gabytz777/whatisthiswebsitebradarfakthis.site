@@ -47,7 +47,7 @@ const Promotions = [
   },
   {
     icon: FaGithub,
-    text: 'Mindows',
+    text: 'Lindows',
     action: 'https://www.github.com/piyush078/mindows',
   },
   {

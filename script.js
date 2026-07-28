@@ -1395,7 +1395,7 @@ function renderCalendar(win) {
           cells +
         '</div>' +
         '<div style="flex:1;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px">' +
-          'Mindows Calendar' +
+          'Lindows Calendar' +
         '</div>' +
       '</div>';
 

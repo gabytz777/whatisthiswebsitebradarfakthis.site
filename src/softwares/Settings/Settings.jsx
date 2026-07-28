@@ -5,7 +5,7 @@ const Settings = () => (
   <div className="Settings">
     <div className="Settings-leftbar">
       <VscDebug />
-      <p>Oops! Mindows must be broken!!</p>
+      <p>Oops! Lindows must be broken!!</p>
     </div>
     <div className="Settings-rightbar">
       <div>

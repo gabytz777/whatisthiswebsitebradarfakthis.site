@@ -527,11 +527,16 @@ function enterDesktop(user) {
   store.set('auth.success', false);
   var username = user.username;
   var account = UserManager.getAccount(username);
+  var defaults = store.get('account');
   if (account) {
-    store.set('account.settings', account.settings || store.get('account.settings'));
-    store.set('account.taskbarApps', account.taskbarApps || store.get('account.taskbarApps'));
+    store.set('account.settings', account.settings || defaults.settings);
+    var savedApps = account.taskbarApps || [];
+    var defaultApps = defaults.taskbarApps || [];
+    var merged = defaultApps.slice();
+    savedApps.forEach(function(a) { if (merged.indexOf(a) === -1) merged.push(a); });
+    store.set('account.taskbarApps', merged);
     store.set('account.filesystem', account.filesystem || FileSystem.initFs());
-    store.set('account.defaultApps', account.defaultApps || store.get('account.defaultApps'));
+    store.set('account.defaultApps', account.defaultApps || defaults.defaultApps);
   } else {
     store.set('account.filesystem', FileSystem.initFs());
   }
@@ -698,74 +703,13 @@ function renderStartMenu() {
 // ============================================================
 // PROMOTIONS
 // ============================================================
-var Promotions = [
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', text: 'Google Search', action: 'https://www.google.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-6V5h6v6z"/></svg>', text: 'Amazon', action: 'https://www.amazon.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Chrome', action: 'https://www.google.com/chrome/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/></svg>', text: 'Dropbox', action: 'https://www.dropbox.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>', text: 'Facebook', action: 'https://www.facebook.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', text: 'Firefox', action: 'https://www.mozilla.org/firefox/' },
-
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6 10.5c0 3.31-2.69 6-6 6s-6-2.69-6-6 2.69-6 6-6 6 2.69 6 6z"/></svg>', text: 'Skype', action: 'https://www.skype.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>', text: 'Weather', action: 'https://weather.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2H6V2zm4 4h4v2h-4V6zm0 4h4v2h-4v-2zm-4 4h12v2H6v-2zm0 4h12v2H6v-2z"/></svg>', text: 'Word', action: 'https://www.microsoft.com/microsoft-365/word' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Steam', action: 'https://store.steampowered.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Camera', action: 'https://www.microsoft.com/store/camera' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>', text: 'Windows 11', action: 'https://www.microsoft.com/windows/windows-11' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/></svg>', text: 'News', action: 'https://www.bing.com/news' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>', text: 'Movies', action: 'https://www.microsoft.com/store/movies' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>', text: 'Xbox', action: 'https://www.xbox.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>', text: 'Music', action: 'https://www.microsoft.com/store/music' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 1L4 9.5V20c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9.5L12.5 1zM12 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>', text: 'Money', action: 'https://www.microsoft.com/store/money' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Gallery', action: 'https://onedrive.live.com/' },
-];
+var Promotions = [];
 
 var PROMO_COLORS = ['#3e3c91', '#2d7d2d', '#cc6600', '#cc0000'];
 
 function renderPromotions() {
   var container = Utils.$('smPromo');
   container.innerHTML = '';
-  var shuffled = Promotions.slice().sort(function() { return Math.random() - 0.5; });
-
-  var leftSection = document.createElement('div');
-  leftSection.className = 'smPromoSection';
-  var leftHeader = document.createElement('div');
-  leftHeader.className = 'smPromoHeader';
-  leftHeader.textContent = 'Life at a glance';
-  leftSection.appendChild(leftHeader);
-  var leftGrid = document.createElement('div');
-  leftGrid.className = 'smPromoGrid';
-  shuffled.slice(0, 7).forEach(function(item, i) {
-    var el = document.createElement('a');
-    el.className = 'smPromoItem' + (i % 5 === 3 ? ' large' : '');
-    el.style.background = PROMO_COLORS[Math.floor(Math.random() * 4)];
-    el.href = item.action || '#';
-    el.target = '_blank';
-    el.innerHTML = '<div class="smPromoItemIcon">' + item.icon + '</div><div class="smPromoItemLabel">' + item.text + '</div>';
-    leftGrid.appendChild(el);
-  });
-  leftSection.appendChild(leftGrid);
-  container.appendChild(leftSection);
-
-  var rightSection = document.createElement('div');
-  rightSection.className = 'smPromoSection';
-  var rightHeader = document.createElement('div');
-  rightHeader.className = 'smPromoHeader';
-  rightHeader.textContent = 'Explore';
-  rightSection.appendChild(rightHeader);
-  var rightGrid = document.createElement('div');
-  rightGrid.className = 'smPromoGrid';
-  shuffled.slice(7, 13).forEach(function(item) {
-    var el = document.createElement('a');
-    el.className = 'smPromoItem';
-    el.style.background = PROMO_COLORS[Math.floor(Math.random() * 4)];
-    el.href = item.action || '#';
-    el.target = '_blank';
-    el.innerHTML = '<div class="smPromoItemIcon">' + item.icon + '</div><div class="smPromoItemLabel">' + item.text + '</div>';
-    rightGrid.appendChild(el);
-  });
-  rightSection.appendChild(rightGrid);
-  container.appendChild(rightSection);
 }
 
 function toggleStartMenu(forceState) {

@@ -635,44 +635,17 @@ function renderStartMenu() {
 
   var appIds = Object.keys(InstalledApps);
   appIds.sort();
-  var categories = {};
   appIds.forEach(function(id) {
     var app = InstalledApps[id];
-    var letter = app.name[0].toUpperCase();
-    if (!categories[letter]) categories[letter] = [];
-    categories[letter].push(app);
+    var item = document.createElement('div');
+    item.className = 'smAppCategoryItem';
+    item.innerHTML = '<div class="smAppIcon">' + app.icon + '</div><span class="smAppName">' + app.name + '</span>';
+    item.onclick = function() {
+      toggleStartMenu(false);
+      launchProgram(app.id);
+    };
+    appsContainer.appendChild(item);
   });
-
-  var sortedLetters = Object.keys(categories).sort();
-  sortedLetters.forEach(function(letter) {
-    var catDiv = document.createElement('div');
-    catDiv.className = 'smAppCategory';
-    var header = document.createElement('div');
-    header.className = 'smAppCategoryHeader';
-    header.textContent = letter;
-    catDiv.appendChild(header);
-    categories[letter].forEach(function(app) {
-      var item = document.createElement('div');
-      item.className = 'smAppCategoryItem';
-      item.innerHTML = '<div class="smAppIcon">' + app.icon + '</div><span class="smAppName">' + app.name + '</span>';
-      item.onclick = function() {
-        toggleStartMenu(false);
-        launchProgram(app.id);
-      };
-      catDiv.appendChild(item);
-    });
-    appsContainer.appendChild(catDiv);
-  });
-
-  // Promotions
-  renderPromotions();
-
-  // Drawer user name
-  var activeUser = store.get('auth.activeUser');
-  if (activeUser) {
-    var label = Utils.qs('.smDrawerItem[data-action="user"] .smDrawerItemLabel');
-    if (label) label.textContent = activeUser.name;
-  }
 
   // Drawer toggle
   var drawer = Utils.$('smDrawer');
@@ -705,12 +678,7 @@ function renderStartMenu() {
 // ============================================================
 var Promotions = [];
 
-var PROMO_COLORS = ['#3e3c91', '#2d7d2d', '#cc6600', '#cc0000'];
 
-function renderPromotions() {
-  var container = Utils.$('smPromo');
-  container.innerHTML = '';
-}
 
 function toggleStartMenu(forceState) {
   if (forceState !== undefined) {

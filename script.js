@@ -10,7 +10,7 @@ const store = {
     boot: { backgrounds: { lock: null, login: null } },
     account: {
       settings: { background: 'd2luMTBfb2ZmaWNpYWxfd2FsbHBhcGVy.jpg' },
-      taskbarApps: ['fsexplorer', 'notepad'],
+      taskbarApps: ['fsexplorer', 'notepad', 'google'],
       filesystem: null,
       defaultApps: { '*': 'notepad' },
     },
@@ -282,6 +282,7 @@ var APP_ICONS = {
   calculator: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3h2v2h-2V6zm-4 0h2v2H8V6zm0 4h2v2H8v-2zm4 0h2v2h-2v-2zm-4 4h2v2H8v-2zm4 0h2v2h-2v-2zm4-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"/></svg>',
   calendar: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>',
   explorer: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>',
+  google: '<svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>',
   notepad: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-3 16H7v-2h4v2zm6-4H7v-2h10v2zm0-4h-4V4h4v6z"/></svg>',
   settings: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>',
 };
@@ -300,6 +301,11 @@ var InstalledApps = {
     id: 'fsexplorer', name: 'File Explorer', icon: APP_ICONS.explorer,
     perms: { OPEN_DOCUMENT: true },
     render: function(win) { renderExplorer(win); },
+  },
+  google: {
+    id: 'google', name: 'Google', icon: APP_ICONS.google,
+    config: { initWindowWidth: '800px', initWindowHeight: '600px' },
+    render: function(win) { renderGoogle(win); },
   },
   notepad: {
     id: 'notepad', name: 'Notepad', icon: APP_ICONS.notepad,
@@ -1449,6 +1455,80 @@ function renderSettings(win) {
         render();
       };
     });
+  }
+
+  render();
+}
+
+// --- GOOGLE ---
+function renderGoogle(win) {
+  var body = win._body;
+  var query = '';
+
+  function render() {
+    body.innerHTML =
+      '<div class="Google" style="display:flex;flex-direction:column;height:100%;font-family:sans-serif">' +
+        '<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#1a1a2e;flex-shrink:0">' +
+          '<input id="googleInput" type="text" placeholder="Search Google..." value="' + Utils.escapeHtml(query) + '" style="flex:1;padding:8px 12px;font-size:14px;border:none;border-radius:4px;outline:none" />' +
+          '<button id="googleSearchBtn" style="background:#4285F4;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:14px">Search</button>' +
+        '</div>' +
+        '<div style="flex:1;position:relative">' +
+          '<iframe id="googleFrame" style="width:100%;height:100%;border:none" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>' +
+          '<div id="googleFallback" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:#f5f5f5;color:#666;font-size:16px;gap:12px">' +
+            '<p>Google cannot be embedded due to security restrictions.</p>' +
+            '<button id="googleOpenBtn" style="background:#4285F4;color:white;border:none;padding:10px 24px;border-radius:4px;cursor:pointer;font-size:14px">Open Google in new tab</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    var input = Utils.$('googleInput');
+    var frame = Utils.$('googleFrame');
+    var fallback = Utils.$('googleFallback');
+
+    function doSearch() {
+      query = input.value.trim();
+      if (!query) return;
+      var url = 'https://www.google.com/search?igu=1&q=' + encodeURIComponent(query);
+      try {
+        frame.src = url;
+        fallback.style.display = 'none';
+        frame.style.display = 'block';
+      } catch(e) {
+        showFallback();
+      }
+    }
+
+    function showFallback() {
+      frame.style.display = 'none';
+      fallback.style.display = 'flex';
+    }
+
+    frame.onerror = showFallback;
+
+    Utils.$('googleSearchBtn').onclick = doSearch;
+    input.onkeyup = function(e) { if (e.key === 'Enter') doSearch(); };
+    Utils.$('googleOpenBtn').onclick = function() {
+      var url = 'https://www.google.com/search?q=' + encodeURIComponent(query || '');
+      window.open(url, '_blank');
+    };
+
+    // Try loading Google homepage
+    try {
+      frame.src = 'https://www.google.com/webhp?igu=1';
+    } catch(e) {
+      showFallback();
+    }
+
+    // Detect iframe load failure
+    setTimeout(function() {
+      try {
+        if (frame.contentDocument && frame.contentDocument.body.innerHTML.length < 50) {
+          showFallback();
+        }
+      } catch(e) {
+        showFallback();
+      }
+    }, 3000);
   }
 
   render();

@@ -1,0 +1,19 @@
+@use './scss/mixins';
+
+* {
+  @include mixins.reset;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: .9rem;
+}
+
+html, body, #root, .App {
+  @include mixins.reset;
+  @include mixins.fullscreen;
+
+  overflow: hidden !important;
+}
+
+@include mixins.transitionFadeIn;

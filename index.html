@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="public/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="A minimal Operating system for browser built using React" />
+  <link rel="apple-touch-icon" href="public/logo192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Mindows</title>
+</head>
+<body>
+
+<!-- BOOT SCREEN -->
+<div id="bootScreen" class="screen">
+  <div class="bootLogo">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16zM6 6h10v2H6zm0 4h10v2H6zm0 4h6v2H6z"/></svg>
+    <div class="loader" id="bootLoader">
+      <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen" class="screen hidden">
+  <div class="lockTime">
+    <p class="lockTimeTitle"></p>
+    <p class="lockTimeSubtitle"></p>
+  </div>
+</div>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="screen hidden">
+  <div id="loginBg" class="loginBg"></div>
+  <div class="loginContent">
+    <div class="loginForm">
+      <div class="loginPfp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+      <div class="loginUsername" id="loginUsername"></div>
+      <div class="loginFields">
+        <div class="loginPasswordWrap">
+          <input type="password" id="loginPassword" placeholder="Password" />
+          <div class="loginEye" id="loginEye"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+          <div class="loginArrow" id="loginArrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></div>
+        </div>
+      </div>
+      <div id="loginFeedback" class="loginFeedback"></div>
+      <a href="#" id="loginSignupLink" class="loginSignupLink">Sign-up options</a>
+    </div>
+    <div class="loginUserList" id="loginUserList"></div>
+  </div>
+</div>
+
+<!-- NEW ACCOUNT SCREEN -->
+<div id="newAccountScreen" class="screen hidden">
+  <div class="naHeader">
+    <div id="naBackBtn" class="naBack hidden"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+    <div class="naHeaderTitle">Account</div>
+    <div></div>
+  </div>
+  <div class="naContent">
+    <div class="naView" id="naView1">
+      <div class="naHeading">
+        <p class="naTitle">Who's going to use this PC?</p>
+        <p class="naSubtitle">What name do you want to use?</p>
+      </div>
+      <div class="naForm">
+        <div class="naPfp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+        <input type="text" id="naName" placeholder="User name" maxlength="40" />
+      </div>
+      <div class="naFooter">
+        <div class="naSigninOpt" id="naSigninOpt"><a href="#" id="naSigninLink">Or, even better, sign-in</a></div>
+        <button class="Button" id="naNext1" disabled>Next</button>
+      </div>
+    </div>
+    <div class="naView hidden" id="naView2">
+      <div class="naHeading">
+        <p class="naTitle">Create a super memorable password</p>
+        <p class="naSubtitle">Make sure to pick something you'll absolutely remember</p>
+      </div>
+      <div class="naForm">
+        <div class="naPfp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+        <input type="password" id="naPassword" placeholder="Password" maxlength="40" />
+      </div>
+      <div class="naFooter">
+        <div></div>
+        <button class="Button" id="naNext2" disabled>Next</button>
+      </div>
+    </div>
+    <div class="naView hidden" id="naView3">
+      <div class="loader" id="setupLoader">
+        <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+      </div>
+      <div class="naHeading"><p class="naSubtitle">Just a moment...</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div id="desktop" class="screen hidden">
+  <div id="desktopWallpaper"></div>
+  <div id="programContainer"></div>
+
+  <!-- START MENU -->
+  <div id="startMenu" class="startMenu hidden">
+    <div class="smDrawer" id="smDrawer">
+      <div class="smDrawerUser">
+        <div class="smDrawerUserIcon" id="smDrawerToggle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+        <span class="smDrawerUserLabel">START</span>
+      </div>
+      <div class="smDrawerItems" id="smDrawerItems">
+        <div class="smDrawerItem" data-action="user"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="smDrawerItemLabel"></span></div>
+        <div class="smDrawerItem" data-app="fsexplorer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg><span class="smDrawerItemLabel">File Explorer</span></div>
+        <div class="smDrawerItem" data-app="settings"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg><span class="smDrawerItemLabel">Settings</span></div>
+        <div class="smDrawerItem" id="smLogout"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.59-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg><span class="smDrawerItemLabel">Log Off</span></div>
+      </div>
+    </div>
+    <div class="smApps" id="smApps"></div>
+    <div class="smPromo" id="smPromo"></div>
+  </div>
+
+  <!-- TASKBAR -->
+  <div id="taskbar" class="taskbar">
+    <div class="taskbarLeft">
+      <div class="taskbarWindowsIcon" id="taskbarWindowsIcon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16zM6 6h10v2H6zm0 4h10v2H6zm0 4h6v2H6z"/></svg>
+      </div>
+      <div class="taskbarSearch">
+        <div class="taskbarSearchPseudo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <span>Type here to search</span>
+        </div>
+        <input type="text" required />
+      </div>
+      <div class="taskbarApps" id="taskbarApps"></div>
+    </div>
+    <div class="taskbarRight">
+      <div class="taskbarTrayItem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 24h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM16 0v2H8V0H6v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2h-2V0h-2z"/></svg></div>
+      <div class="taskbarTrayItem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/></svg></div>
+      <div class="taskbarTrayItem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></div>
+      <div class="taskbarTrayItem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></div>
+      <div class="taskbarTrayItem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+      <div class="taskbarClock" id="taskbarClock">
+        <div class="clockTime"></div>
+        <div class="clockDate"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAM INSTANCE TEMPLATES -->
+  <div id="programTemplate" class="program hidden" data-pid="">
+    <div class="programTitleBar" data-pid="">
+      <div class="titleBarDetails">
+        <div class="titleBarIcon"></div>
+        <div class="titleBarTitle"></div>
+      </div>
+      <div class="titleBarButtons">
+        <div class="titleBtn minimizeBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13H5v-2h14v2z"/></svg></div>
+        <div class="titleBtn maximizeBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></div>
+        <div class="titleBtn closeBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+      </div>
+    </div>
+    <div class="programBody"></div>
+  </div>
+</div>
+
+<div id="loadingOverlay" class="screen hidden">
+  <div class="loader">
+    <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  </div>
+  <div class="naHeading"><p class="naSubtitle" id="loadingMessage">Logging out</p></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

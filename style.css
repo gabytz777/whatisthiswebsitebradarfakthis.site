@@ -1,0 +1,344 @@
+@font-face { font-family: 'Open Sans'; src: url('public/fonts/OpenSans-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans Light'; src: url('public/fonts/OpenSans-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans Semibold'; src: url('public/fonts/OpenSans-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans Bold'; src: url('public/fonts/OpenSans-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Open Sans Italic'; src: url('public/fonts/OpenSans-Italic.ttf') format('truetype'); }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  font-size: 16px;
+  --taskbarBg: #091418;
+  --taskbarFg: white;
+  --titleBarHeight: 40px;
+  --taskbarHeight: 48px;
+  --startMenuHeight: 512px;
+  --defaultFont: 'Segoe UI', 'Open Sans', sans-serif;
+}
+
+html, body, #root, .App { height: 100%; width: 100%; overflow: hidden !important; }
+body { font-family: var(--defaultFont); background: rgb(1, 1, 16); user-select: none; -webkit-user-select: none; }
+
+.screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.hidden { display: none !important; }
+
+/* === BOOT SCREEN === */
+#bootScreen {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgb(1, 1, 16); z-index: 99999;
+}
+.bootLogo svg { width: 160px; height: 160px; color: lightblue; margin-bottom: 40px; }
+
+/* === LOADING DOTS === */
+.loader { position: relative; width: 48px; height: 48px; margin: 0 auto; }
+.loader .circle {
+  position: absolute; opacity: 0; top: 20%; width: 32px; height: 32px;
+  transform: rotate(225deg); animation: orbit 5.5s infinite;
+}
+.loader .circle::after {
+  content: ''; position: absolute; width: 6px; height: 6px; border-radius: 5px; background: #fff;
+}
+.loader .circle:nth-child(2) { animation-delay: 240ms; }
+.loader .circle:nth-child(3) { animation-delay: 480ms; }
+.loader .circle:nth-child(4) { animation-delay: 720ms; }
+.loader .circle:nth-child(5) { animation-delay: 960ms; }
+
+@keyframes orbit {
+  0% { transform: rotate(225deg); opacity: 1; animation-timing-function: ease-out; }
+  7% { transform: rotate(345deg); animation-timing-function: linear; }
+  30% { transform: rotate(455deg); animation-timing-function: ease-in-out; }
+  39% { transform: rotate(690deg); animation-timing-function: linear; }
+  70% { transform: rotate(815deg); opacity: 1; animation-timing-function: ease-out; }
+  75% { transform: rotate(945deg); animation-timing-function: ease-out; }
+  76% { transform: rotate(945deg); opacity: 0; }
+  100% { transform: rotate(945deg); opacity: 0; }
+}
+
+/* === LOCK SCREEN === */
+#lockScreen { background-size: cover; background-position: center; z-index: 9999; cursor: pointer; }
+#lockScreen::after { content: ''; position: absolute; background: rgba(0,0,0,.6); inset: 0; }
+.lockTime { position: absolute; left: 64px; bottom: 96px; color: white; z-index: 1; }
+.lockTimeTitle { font-family: 'Segoe UI Light', 'Open Sans Light'; font-size: 120px; margin-bottom: -16px; }
+.lockTimeSubtitle { font-family: 'Segoe UI Light', 'Open Sans Light'; font-size: 64px; }
+
+/* === LOGIN SCREEN === */
+.loginBg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.loginBg::after { content: ''; position: absolute; background: rgba(0,0,0,.6); inset: 0; }
+.loginContent { position: absolute; inset: 0; display: flex; flex: 1; }
+.loginContent > * { margin: auto; }
+.loginForm { display: flex; flex-direction: column; align-items: center; z-index: 1; }
+.loginPfp {
+  width: 200px; height: 200px; border-radius: 50%; background: rgba(188,188,188,.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.loginPfp svg { width: 160px; height: 160px; color: white; }
+.loginUsername { color: white; font-size: 48px; margin-top: 16px; font-family: 'Segoe UI Light', 'Open Sans Light'; }
+.loginFields { margin-top: 24px; }
+.loginPasswordWrap { position: relative; }
+.loginPasswordWrap input {
+  background: rgba(14,20,32,.5); width: 320px; font-size: 18px; padding: 8px 80px 8px 8px;
+  outline: none; border: 2px solid white; color: white;
+}
+.loginPasswordWrap input:focus { background: white; color: black; border: 1px solid white; }
+.loginEye, .loginArrow {
+  position: absolute; top: 1px; bottom: 1px; width: 36px; display: flex; cursor: pointer;
+}
+.loginEye { right: 40px; }
+.loginEye svg, .loginArrow svg { margin: auto; fill: white; width: 20px; height: 20px; }
+.loginArrow { right: 1px; background: rgb(128,128,128); }
+.loginArrow svg { width: 24px; height: 24px; }
+.loginPasswordWrap input:focus ~ .loginEye svg,
+.loginPasswordWrap input:focus ~ .loginArrow svg { fill: black; }
+.loginFeedback { margin-top: 24px; }
+.loginSignupLink {
+  font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; text-decoration: none; color: white; margin-top: 16px;
+}
+.loginSignupLink:hover { text-decoration: underline; }
+.loginUserList { position: absolute; bottom: 32px; left: 32px; z-index: 1; }
+.loginUserListItem {
+  display: flex; align-items: center; color: white; font-size: 16px; padding: 4px 8px; cursor: pointer;
+}
+.loginUserListItem.active { background: #1c7797; }
+.loginUserListItemPfp {
+  display: flex; background: rgba(188,188,188,.5); height: 48px; width: 48px;
+  border-radius: 50%; margin-right: 16px; align-items: center; justify-content: center;
+}
+.loginUserListItemPfp svg { width: 24px; height: 24px; margin: auto; color: white; }
+.loginSuccess { display: flex; margin-top: 24px; font-size: 20px; color: white; align-items: center; }
+.loginSuccess svg { width: 24px; height: 24px; margin-right: 8px; fill: white; }
+.loginError { display: flex; flex-direction: column; align-items: center; margin-top: 24px; }
+.loginError span { font-size: 18px; margin-bottom: 16px; color: white; }
+.loginError button { background: rgba(255,255,255,0.2); border: 2px solid white; }
+
+/* === NEW ACCOUNT === */
+#newAccountScreen { background: #1f1e49; z-index: 9999; display: flex; flex-direction: column; }
+.naHeader {
+  width: 100%; background: #13122b; padding: 0 16px; display: flex;
+  justify-content: space-between; align-items: center; color: white; min-height: 40px;
+}
+.naBack { cursor: pointer; }
+.naBack svg { width: 32px; height: 32px; fill: white; }
+.naHeaderTitle { font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; text-align: center; min-width: 200px; border-bottom: 2px solid white; padding: 8px 0; }
+.naContent { flex: 1; position: relative; }
+.naView { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: opacity .25s ease-out; }
+.naHeading { text-align: center; padding-top: 48px; color: white; }
+.naTitle { font-size: 64px; font-family: 'Segoe UI Light', 'Open Sans Light'; }
+.naSubtitle { font-size: 24px; font-family: 'Segoe UI Light', 'Open Sans Light'; margin-top: 8px; }
+.naPfp {
+  border-radius: 50%; border: 2px solid white; width: 160px; height: 160px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 32px;
+}
+.naPfp svg { width: 120px; height: 120px; color: white; }
+.naForm { display: flex; flex-direction: column; align-items: center; margin-top: -24px; }
+.naForm input {
+  font-size: 18px; padding: 8px; outline: none; border: 2px solid white;
+  width: 480px; background: transparent; color: white;
+}
+.naFooter { width: 100%; padding: 0 32px 32px; display: flex; justify-content: space-between; align-items: center; }
+.naSigninOpt a { text-decoration: none; color: white; }
+.Button {
+  font-family: var(--defaultFont); width: 200px; font-size: 16px; color: white;
+  padding: 8px 0; outline: none; border: 0; cursor: pointer;
+}
+.Button:disabled { opacity: .5; cursor: default; }
+
+/* === DESKTOP === */
+#desktop { z-index: 1; }
+#desktopWallpaper { position: absolute; inset: 0; background-size: cover; background-position: center; }
+#programContainer { position: absolute; inset: 0; bottom: var(--taskbarHeight); overflow: hidden; }
+
+/* === PROGRAM WINDOW === */
+.program {
+  position: absolute; background: white; display: flex; flex-direction: column;
+  box-shadow: 0 0 5px 2px #2d2d2d; border: 1px solid #ccc;
+}
+.programBody { flex: 1; position: relative; overflow: hidden; }
+.programTitleBar {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; height: var(--titleBarHeight); background: white; cursor: default; flex-shrink: 0;
+}
+.titleBarDetails { display: flex; align-items: center; padding: 0 8px; height: 100%; }
+.titleBarIcon svg { width: 20px; height: 20px; }
+.titleBarTitle { font-size: 13px; margin-left: 8px; }
+.titleBarButtons { display: flex; align-items: center; height: 100%; }
+.titleBtn { height: 100%; width: var(--titleBarHeight); padding: 10px; cursor: pointer; }
+.titleBtn svg { width: 100%; height: 100%; }
+.titleBtn:hover { background: beige; }
+.closeBtn:hover { background: crimson; color: white; }
+.closeBtn:hover svg { fill: white; }
+
+/* === TASKBAR === */
+.taskbar {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: var(--taskbarHeight);
+  background: var(--taskbarBg); display: flex; align-items: center;
+  justify-content: space-between; z-index: 10000;
+}
+.taskbar svg { fill: var(--taskbarFg); }
+.taskbarLeft, .taskbarRight { display: flex; align-items: center; height: 100%; }
+.taskbarLeft > *, .taskbarRight > * {
+  display: flex; align-items: center; height: 100%; padding: 0 16px; font-size: 16px;
+}
+.taskbarWindowsIcon { cursor: pointer; }
+.taskbarWindowsIcon svg { width: 20px; height: 20px; }
+.taskbarSearch { position: relative; width: 400px; }
+.taskbarSearchPseudo {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  color: white; background: #625959; padding: 0 16px; pointer-events: none;
+}
+.taskbarSearchPseudo svg { width: 16px; height: 16px; margin-right: 12px; }
+.taskbarSearch input {
+  width: 100%; height: 100%; outline: none; border: 0; font-size: 16px; padding: 0 16px; background: transparent;
+}
+.taskbarSearch input:focus, .taskbarSearch input:valid { background: white; color: black; }
+.taskbarTrayItem svg { width: 18px; height: 18px; }
+.taskbarTrayItem { padding: 0 8px !important; }
+.taskbarClock { flex-direction: column; align-items: center; font-size: 14px; padding: 0 12px !important; margin-top: -4px; }
+.clockTime, .clockDate { color: white; line-height: 1.2; }
+
+/* === TASKBAR APPS === */
+.taskbarApps { display: flex; align-items: center; height: 100%; }
+.taskbarApp {
+  position: relative; margin-left: 4px; font-size: 24px; cursor: pointer;
+  height: 100%; display: flex; align-items: center; padding: 0 8px;
+}
+.taskbarApp svg { width: 24px; height: 24px; }
+.taskbarApp.running { border-bottom: 4px solid aqua; background: rgba(192,192,192,0.1); }
+.taskbarAppInstanceList {
+  position: absolute; bottom: 100%; font-size: 12px; display: none;
+  flex-direction: column; min-width: 240px; background: #122830f3;
+}
+.taskbarApp:hover .taskbarAppInstanceList { display: flex; }
+.taskbarAppInstance {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 16px; cursor: default; margin: 2px 8px; border-radius: 4px;
+}
+.taskbarAppInstance:first-child { margin-top: 6px; }
+.taskbarAppInstance:last-child { margin-bottom: 6px; }
+.taskbarAppInstance:hover { background: rgba(227,21,62,0.4); }
+.taskbarAppInstanceTitle { font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; margin-right: 8px; color: white; }
+.taskbarAppInstanceClose { padding: 2px; }
+.taskbarAppInstanceClose svg { width: 12px; height: 12px; fill: white; }
+
+/* === START MENU === */
+.startMenu {
+  position: absolute; left: 0; bottom: var(--taskbarHeight); height: var(--startMenuHeight);
+  display: flex; background: var(--taskbarBg); color: var(--taskbarFg); z-index: 9999;
+  transition: bottom .5s ease; font-size: 16px; padding-top: 16px;
+}
+.startMenu.hidden { bottom: calc(-1 * var(--startMenuHeight)); }
+.smDrawer { width: 48px; height: 100%; background: var(--taskbarBg); display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; transition: width .5s ease; flex-shrink: 0; }
+.smDrawer.open { width: 320px; }
+.smDrawerUser { display: flex; align-items: center; padding: 16px; }
+.smDrawerUserIcon { cursor: pointer; display: flex; align-items: center; }
+.smDrawerUserIcon svg { width: 20px; height: 20px; fill: white; }
+.smDrawerUserLabel { font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; margin-left: 32px; white-space: nowrap; }
+.smDrawerItems { display: flex; flex-direction: column; }
+.smDrawerItem { display: flex; align-items: center; padding: 16px; cursor: pointer; }
+.smDrawerItem svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+.smDrawerItemLabel { margin-left: 32px; white-space: nowrap; }
+.smApps {
+  position: absolute; top: 0; left: 48px; width: 320px; padding: 16px;
+  height: 100%; overflow-y: auto;
+}
+.smAppCategoryHeader { font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; padding: 16px 0 16px 0; }
+.smAppCategoryItem {
+  display: flex; align-items: center; cursor: pointer; margin-right: 48px;
+  padding: 2px 2px 2px 0; border: 2px solid transparent;
+}
+.smAppCategoryItem:active { border: 2px solid white; }
+.smAppIcon { padding: 8px; background: #3e3c91; font-size: 20px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+.smAppIcon svg { width: 24px; height: 24px; }
+.smAppName { margin-left: 8px; }
+.smPromo { position: absolute; top: 0; left: 368px; height: 100%; padding-top: 16px; overflow-y: auto; }
+.smPromoSection { margin-top: 16px; }
+.smPromoSection:first-child { margin-top: 0; }
+.smPromoHeader { font-family: 'Segoe UI Semibold', 'Open Sans Semibold'; padding-bottom: 16px; }
+.smPromoGrid { display: flex; flex-wrap: wrap; }
+.smPromoItem {
+  position: relative; display: flex; margin-right: 4px; margin-bottom: 4px;
+  height: 106px; width: 106px; color: white; text-decoration: none; cursor: pointer;
+}
+.smPromoItem.large { width: 220px; }
+.smPromoItemIcon { margin: auto; font-size: 32px; }
+.smPromoItemLabel { font-size: 12px; position: absolute; left: 0; padding: 0 4px; bottom: 8px; width: 100%; text-align: center; }
+
+/* === EXPLORER === */
+.Explorer, .Notepad, .Calculator, .Calender, .Settings { width: 100%; height: 100%; position: relative; }
+.Explorer { font-size: 12px; display: flex; flex-direction: column; }
+.ExplorerRibbon {
+  display: flex; width: 100%; background: #e9ecee; padding: 4px 0;
+  border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; flex-shrink: 0;
+}
+.ExplorerRibbonCategory { display: flex; flex-direction: column; border-right: 1px solid lightgray; padding: 0 4px; }
+.ExplorerRibbonButtons { display: flex; }
+.ExplorerRibbonLabel { text-align: center; color: rgba(0,0,0,.8); font-size: 11px; }
+.ExplorerRibbonBtn {
+  width: 56px; padding: 4px 8px; display: flex; flex-direction: column;
+  align-items: center; text-align: center; cursor: pointer; font-size: 11px;
+}
+.ExplorerRibbonBtn:hover { background: lightblue; }
+.ExplorerRibbonBtn[disabled] { opacity: .4; pointer-events: none; }
+.ExplorerRibbonBtnIcon svg { width: 24px; height: 24px; }
+.ExplorerRibbonBtnIcon img { height: 24px; }
+.ExplorerViewport { display: flex; flex: 1; overflow-y: auto; }
+.ExplorerSidebar { width: 144px; border-right: 1px solid lightgray; font-size: 13px; padding: 8px 0; }
+.ExplorerSidebarItem { display: flex; align-items: center; padding: 4px 8px; cursor: pointer; }
+.ExplorerSidebarItem.selected { background: aqua; }
+.ExplorerSidebarItem svg { width: 18px; height: 18px; margin-right: 8px; }
+.ExplorerSidebarSub { padding-left: 16px; }
+.ExplorerFs { flex: 1; padding: 8px 16px; display: flex; flex-wrap: wrap; align-content: flex-start; }
+.ExplorerFsItem {
+  display: flex; flex-direction: column; align-items: center; padding: 4px 8px;
+  margin: 0 4px 4px 4px; cursor: pointer; width: 100px; text-align: center;
+  border: 2px solid transparent; border-radius: 2px; position: relative; font-size: 12px;
+}
+.ExplorerFsItem:hover { background: #d5ecfc; border-color: #8ecbfa; }
+.ExplorerFsItem.selected { border-color: #8ecbfa; background: #cce8fe; }
+.ExplorerFsItem.cut::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,.4); }
+.ExplorerFsItem svg, .ExplorerFsItem img { width: 32px; height: 32px; display: block; margin-bottom: 4px; }
+.ExplorerFsItem.row { flex-direction: row; width: auto; }
+.ExplorerFsItem.row svg { margin-right: 16px; margin-bottom: 0; }
+.ExplorerFsItem input { font-size: 12px; text-align: center; width: 100%; border: 0; outline: 1px solid blue; }
+
+/* === NOTEPAD === */
+.Notepad { display: flex; flex-direction: column; }
+.NotepadMenubar {
+  display: flex; align-items: center; font-size: 13px; border-bottom: 2px solid #f1f1f1;
+  padding: 0 2px 2px; flex-shrink: 0;
+}
+.NotepadMenubarItem { padding: 4px 8px; border: 1px solid transparent; cursor: pointer; position: relative; }
+.NotepadMenubarItem:hover { background: #d5ecfc; border-color: #8ecbfa; }
+.NotepadMenubarSubmenu {
+  position: absolute; top: 100%; left: -1px; border: 1px solid darkgray; background: white;
+  padding: 2px; min-width: 128px; display: none; z-index: 10;
+}
+.NotepadMenubarItem.open .NotepadMenubarSubmenu { display: block; }
+.NotepadMenubarSubmenuItem { padding: 4px 16px; display: flex; align-items: center; border: 2px solid transparent; }
+.NotepadMenubarSubmenuItem:hover { background: #8ecbfa; }
+.NotepadMenubarSubmenuItem svg { width: 16px; height: 16px; margin-right: 8px; }
+.NotepadContent { flex: 1; }
+.NotepadContent textarea {
+  width: 100%; height: 100%; padding: 8px; resize: none; outline: none;
+  border: 0; font-size: 14px; font-family: var(--defaultFont);
+}
+.NotepadContent textarea:focus { outline: none; }
+
+/* === PLACEHOLDER APPS === */
+.Calculator, .Calender, .Settings { display: flex; }
+.Calculator > div, .Calender > div, .Settings > div {
+  flex: 1; padding: 1rem; display: flex; flex-direction: column;
+}
+.Calculator > div:first-child, .Calender > div:first-child, .Settings > div:first-child {
+  border-right: 2px solid lightgray; font-size: 2.5em;
+}
+.Calculator > div:last-child, .Calender > div:last-child, .Settings > div:last-child {
+  font-size: 1em; justify-content: center;
+}
+.Calculator p, .Calender p, .Settings p { margin-bottom: 8px; }
+
+/* === LOADING OVERLAY === */
+#loadingOverlay {
+  background: #1f1e49; z-index: 99999; display: flex;
+  justify-content: center; align-items: center; flex-direction: column;
+}
+.ProgramMenubarItemCheck { width: 16px; height: 16px; display: inline-block; }

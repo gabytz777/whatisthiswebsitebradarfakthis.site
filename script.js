@@ -1564,6 +1564,7 @@ function renderClock(win) {
   resize();
 
   function draw() {
+    if (!document.body.contains(canvas)) return;
     var cx = canvas.width / 2;
     var cy = canvas.height / 2;
     var r = Math.min(cx, cy) - 10;
@@ -1653,7 +1654,7 @@ function renderStopwatch(win) {
 
     Utils.$('swStart').onclick = function() {
       if (running) { clearInterval(interval); running = false; }
-      else { running = true; var start = Date.now() - time; interval = setInterval(function() { time = Date.now() - start; render(); }, 30); }
+      else { running = true; var start = Date.now() - time; interval = setInterval(function() { if (!document.body.contains(body)) { clearInterval(interval); return; } time = Date.now() - start; render(); }, 30); }
       render();
     };
     Utils.$('swLap').onclick = function() { if (running) { laps.push(time); render(); } };
@@ -1789,6 +1790,7 @@ function renderSnake(win) {
   }
 
   function step() {
+    if (!document.body.contains(body)) { clearInterval(loop); return; }
     if (gameOver || paused) return;
     dir = {x: nextDir.x, y: nextDir.y};
     var head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
@@ -1829,11 +1831,11 @@ function renderSnake(win) {
   }
 
   document.onkeydown = function(e) {
-    if (e.key === 'ArrowUp' && dir.y !== 1) nextDir = {x: 0, y: -1};
-    else if (e.key === 'ArrowDown' && dir.y !== -1) nextDir = {x: 0, y: 1};
-    else if (e.key === 'ArrowLeft' && dir.x !== 1) nextDir = {x: -1, y: 0};
-    else if (e.key === 'ArrowRight' && dir.x !== -1) nextDir = {x: 1, y: 0};
-    else if (e.key === ' ') { paused = !paused; }
+    if (e.key === 'ArrowUp' && dir.y !== 1) { e.preventDefault(); nextDir = {x: 0, y: -1}; }
+    else if (e.key === 'ArrowDown' && dir.y !== -1) { e.preventDefault(); nextDir = {x: 0, y: 1}; }
+    else if (e.key === 'ArrowLeft' && dir.x !== 1) { e.preventDefault(); nextDir = {x: -1, y: 0}; }
+    else if (e.key === 'ArrowRight' && dir.x !== -1) { e.preventDefault(); nextDir = {x: 1, y: 0}; }
+    else if (e.key === ' ') { e.preventDefault(); paused = !paused; }
   };
 
   spawnFood();
@@ -1948,6 +1950,7 @@ function renderTicTacToe(win) {
     board[idx] = 'O';
     checkWin();
     player = 'X';
+    render();
   }
 
   function render() {

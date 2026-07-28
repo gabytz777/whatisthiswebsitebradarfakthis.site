@@ -285,6 +285,16 @@ var APP_ICONS = {
   google: '<svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>',
   notepad: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-3 16H7v-2h4v2zm6-4H7v-2h10v2zm0-4h-4V4h4v6z"/></svg>',
   settings: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>',
+  paint: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4H9v11c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h8V4h-3z"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>',
+  stopwatch: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67zM17 1.01l-1.41 1.41 3.54 3.54 1.41-1.41L17 1.01z"/></svg>',
+  notes: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/></svg>',
+  terminal: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6.41 8.59L10.83 12l-4.42 4.42L8 17.83 13.17 12 8 6.17 6.41 7.59zM18 15h-6v2h6v-2z"/></svg>',
+  snake: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h-2v6h2V7zm0 8h-2v2h2v-2z"/></svg>',
+  weather: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>',
+  music: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>',
+  tictactoe: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zM7 11h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM7 15h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>',
+  about: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>',
 };
 
 var InstalledApps = {
@@ -315,6 +325,56 @@ var InstalledApps = {
   settings: {
     id: 'settings', name: 'Settings', icon: APP_ICONS.settings,
     render: function(win) { renderSettings(win); },
+  },
+  paint: {
+    id: 'paint', name: 'Paint', icon: APP_ICONS.paint,
+    config: { initWindowWidth: '600px', initWindowHeight: '480px' },
+    render: function(win) { renderPaint(win); },
+  },
+  clock: {
+    id: 'clock', name: 'Clock', icon: APP_ICONS.clock,
+    config: { initWindowWidth: '320px', initWindowHeight: '360px' },
+    render: function(win) { renderClock(win); },
+  },
+  stopwatch: {
+    id: 'stopwatch', name: 'Stopwatch', icon: APP_ICONS.stopwatch,
+    config: { initWindowWidth: '320px', initWindowHeight: '360px' },
+    render: function(win) { renderStopwatch(win); },
+  },
+  notes: {
+    id: 'notes', name: 'Notes', icon: APP_ICONS.notes,
+    config: { initWindowWidth: '400px', initWindowHeight: '400px' },
+    render: function(win) { renderNotes(win); },
+  },
+  terminal: {
+    id: 'terminal', name: 'Terminal', icon: APP_ICONS.terminal,
+    config: { initWindowWidth: '600px', initWindowHeight: '400px' },
+    render: function(win) { renderTerminal(win); },
+  },
+  snake: {
+    id: 'snake', name: 'Snake', icon: APP_ICONS.snake,
+    config: { initWindowWidth: '320px', initWindowHeight: '420px' },
+    render: function(win) { renderSnake(win); },
+  },
+  weather: {
+    id: 'weather', name: 'Weather', icon: APP_ICONS.weather,
+    config: { initWindowWidth: '360px', initWindowHeight: '400px' },
+    render: function(win) { renderWeather(win); },
+  },
+  music: {
+    id: 'music', name: 'Music', icon: APP_ICONS.music,
+    config: { initWindowWidth: '400px', initWindowHeight: '400px' },
+    render: function(win) { renderMusic(win); },
+  },
+  tictactoe: {
+    id: 'tictactoe', name: 'Tic Tac Toe', icon: APP_ICONS.tictactoe,
+    config: { initWindowWidth: '320px', initWindowHeight: '400px' },
+    render: function(win) { renderTicTacToe(win); },
+  },
+  about: {
+    id: 'about', name: 'About', icon: APP_ICONS.about,
+    config: { initWindowWidth: '400px', initWindowHeight: '320px' },
+    render: function(win) { renderAbout(win); },
   },
 };
 
@@ -1444,6 +1504,495 @@ function renderGoogle(win) {
   }
 
   render();
+}
+
+// --- PAINT ---
+function renderPaint(win) {
+  var body = win._body;
+  var drawing = false;
+  var color = '#000000';
+  var size = 4;
+
+  body.innerHTML =
+    '<div style="display:flex;flex-direction:column;height:100%">' +
+      '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:#eee;flex-shrink:0">' +
+        '<input id="paintColor" type="color" value="#000000" style="width:40px;height:32px;border:none;cursor:pointer" />' +
+        '<input id="paintSize" type="range" min="1" max="20" value="4" style="width:100px" />' +
+        '<button id="paintClear" style="padding:4px 12px;cursor:pointer">Clear</button>' +
+      '</div>' +
+      '<canvas id="paintCanvas" style="flex:1;cursor:crosshair;background:white"></canvas>' +
+    '</div>';
+
+  var canvas = Utils.$('paintCanvas');
+  var ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+  resize();
+
+  canvas.onmousedown = function(e) { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); };
+  canvas.onmousemove = function(e) {
+    if (!drawing) return;
+    ctx.lineWidth = size;
+    ctx.strokeStyle = color;
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+  };
+  canvas.onmouseup = function() { drawing = false; };
+  canvas.onmouseleave = function() { drawing = false; };
+
+  Utils.$('paintColor').onchange = function() { color = this.value; };
+  Utils.$('paintSize').oninput = function() { size = parseInt(this.value); };
+  Utils.$('paintClear').onclick = function() { resize(); };
+}
+
+// --- CLOCK ---
+function renderClock(win) {
+  var body = win._body;
+  body.innerHTML = '<canvas id="clockCanvas" style="width:100%;height:100%"></canvas>';
+  var canvas = Utils.$('clockCanvas');
+  var ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  resize();
+
+  function draw() {
+    var cx = canvas.width / 2;
+    var cy = canvas.height / 2;
+    var r = Math.min(cx, cy) - 10;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = '#1a1a2e';
+    ctx.fill();
+    ctx.strokeStyle = '#444';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    for (var i = 0; i < 12; i++) {
+      var a = (i * 30 - 90) * Math.PI / 180;
+      ctx.beginPath();
+      ctx.moveTo(cx + (r - 15) * Math.cos(a), cy + (r - 15) * Math.sin(a));
+      ctx.lineTo(cx + (r - 5) * Math.cos(a), cy + (r - 5) * Math.sin(a));
+      ctx.strokeStyle = i % 3 === 0 ? '#fff' : '#888';
+      ctx.lineWidth = i % 3 === 0 ? 3 : 1;
+      ctx.stroke();
+    }
+
+    var now = new Date();
+    var h = now.getHours() % 12, m = now.getMinutes(), s = now.getSeconds();
+    var ha = (h * 30 + m * 0.5 - 90) * Math.PI / 180;
+    var ma = (m * 6 - 90) * Math.PI / 180;
+    var sa = (s * 6 - 90) * Math.PI / 180;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * 0.5 * Math.cos(ha), cy + r * 0.5 * Math.sin(ha));
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * 0.7 * Math.cos(ma), cy + r * 0.7 * Math.sin(ma));
+    ctx.strokeStyle = '#ccc';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * 0.8 * Math.cos(sa), cy + r * 0.8 * Math.sin(sa));
+    ctx.strokeStyle = '#f44336';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#f44336';
+    ctx.fill();
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// --- STOPWATCH ---
+function renderStopwatch(win) {
+  var body = win._body;
+  var running = false;
+  var time = 0;
+  var laps = [];
+  var interval = null;
+
+  function format(ms) {
+    var m = Math.floor(ms / 60000);
+    var s = Math.floor((ms % 60000) / 1000);
+    var c = Math.floor((ms % 1000) / 10);
+    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s + '.' + (c < 10 ? '0' : '') + c;
+  }
+
+  function render() {
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;height:100%;background:#1a1a2e;color:white;font-family:monospace">' +
+        '<div style="flex:1;display:flex;align-items:center;justify-content:center;font-size:3em">' + format(time) + '</div>' +
+        '<div style="display:flex;gap:8px;padding:12px;justify-content:center;flex-shrink:0">' +
+          '<button id="swStart" style="flex:1;padding:10px;background:#2d7d2d;color:white;border:none;cursor:pointer;font-size:1em;border-radius:4px">' + (running ? 'Stop' : 'Start') + '</button>' +
+          '<button id="swLap" style="flex:1;padding:10px;background:#3e3c91;color:white;border:none;cursor:pointer;font-size:1em;border-radius:4px">Lap</button>' +
+          '<button id="swReset" style="flex:1;padding:10px;background:#f44336;color:white;border:none;cursor:pointer;font-size:1em;border-radius:4px">Reset</button>' +
+        '</div>' +
+        (laps.length > 0 ? '<div style="flex:1;overflow-y:auto;padding:8px;border-top:1px solid #444">' + laps.map(function(l, i) { return '<div style="padding:4px 8px;font-size:0.9em;border-bottom:1px solid #333">Lap ' + (i + 1) + ': ' + format(l) + '</div>'; }).join('') + '</div>' : '') +
+      '</div>';
+
+    Utils.$('swStart').onclick = function() {
+      if (running) { clearInterval(interval); running = false; }
+      else { running = true; var start = Date.now() - time; interval = setInterval(function() { time = Date.now() - start; render(); }, 30); }
+      render();
+    };
+    Utils.$('swLap').onclick = function() { if (running) { laps.push(time); render(); } };
+    Utils.$('swReset').onclick = function() { clearInterval(interval); time = 0; laps = []; running = false; render(); };
+  }
+  render();
+}
+
+// --- NOTES ---
+function renderNotes(win) {
+  var body = win._body;
+  var STORE = 'lindows_notes';
+  var notes = JSON.parse(localStorage.getItem(STORE) || '[]');
+  var current = -1;
+
+  function save() { localStorage.setItem(STORE, JSON.stringify(notes)); }
+
+  function render() {
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;height:100%">' +
+        '<div style="display:flex;gap:4px;padding:6px;background:#eee;flex-shrink:0">' +
+          '<button id="notesNew" style="padding:4px 12px;cursor:pointer;background:#3e3c91;color:white;border:none;border-radius:3px">+ New</button>' +
+          '<button id="notesDelete" style="padding:4px 12px;cursor:pointer;background:#f44336;color:white;border:none;border-radius:3px">Delete</button>' +
+        '</div>' +
+        '<div style="display:flex;flex:1;overflow:hidden">' +
+          '<div style="width:120px;overflow-y:auto;border-right:1px solid #ccc;background:#f9f9f9;flex-shrink:0">' +
+            notes.map(function(n, i) {
+              var title = n.substring(0, 20).replace(/\n/g, ' ') || 'Untitled';
+              return '<div class="notesItem' + (i === current ? ' selected' : '') + '" data-idx="' + i + '" style="padding:8px;cursor:pointer;font-size:13px;border-bottom:1px solid #ddd;' + (i === current ? 'background:#d5ecfc' : '') + '">' + Utils.escapeHtml(title) + '</div>';
+            }).join('') +
+          '</div>' +
+          '<textarea id="notesEditor" style="flex:1;border:none;padding:8px;font-size:14px;resize:none;outline:none;font-family:sans-serif">' + (current >= 0 ? Utils.escapeHtml(notes[current]) : '') + '</textarea>' +
+        '</div>' +
+      '</div>';
+
+    Utils.qsa('.notesItem', body).forEach(function(el) {
+      el.onclick = function() { current = parseInt(el.getAttribute('data-idx')); render(); };
+    });
+    var editor = Utils.$('notesEditor');
+    editor.oninput = function() { if (current >= 0) { notes[current] = editor.value; save(); } };
+    Utils.$('notesNew').onclick = function() { notes.unshift(''); current = 0; save(); render(); };
+    Utils.$('notesDelete').onclick = function() { if (current >= 0) { notes.splice(current, 1); current = -1; save(); render(); } };
+  }
+  if (notes.length > 0) current = 0;
+  render();
+}
+
+// --- TERMINAL ---
+function renderTerminal(win) {
+  var body = win._body;
+  var history = ['Welcome to Lindows Terminal', 'Type "help" for commands', ''];
+  var cmdHistory = [];
+  var cmdIdx = -1;
+
+  function runCmd(cmd) {
+    var parts = cmd.trim().split(' ');
+    var c = parts[0].toLowerCase();
+    var out = '';
+    switch (c) {
+      case 'help': out = 'Commands: help, echo, date, whoami, clear, calc, cal, ver, dir, type, time, exit'; break;
+      case 'echo': out = parts.slice(1).join(' '); break;
+      case 'date': out = new Date().toDateString(); break;
+      case 'time': out = new Date().toLocaleTimeString(); break;
+      case 'whoami': out = (store.get('auth.activeUser') || {}).name || 'user'; break;
+      case 'ver': out = 'Lindows OS v1.0'; break;
+      case 'clear': history = []; return;
+      case 'calc': out = 'Try: 2 + 2 = 4'; break;
+      case 'cal': out = new Date().toLocaleDateString(); break;
+      case 'dir': out = 'Documents  Music  Pictures  Videos'; break;
+      case 'type': out = parts.slice(1).join(' ') || 'No text specified'; break;
+      case 'exit': out = 'Use the close button to close this window'; break;
+      default: out = cmd ? "'" + cmd + "' is not recognized" : '';
+    }
+    history.push('> ' + cmd);
+    if (out) history.push(out);
+  }
+
+  function render() {
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;height:100%;background:#0c0c0c;color:#ccc;font-family:monospace;font-size:14px">' +
+        '<div id="termOutput" style="flex:1;overflow-y:auto;padding:8px;white-space:pre-wrap"></div>' +
+        '<div style="display:flex;padding:4px 8px;background:#1a1a1a;flex-shrink:0">' +
+          '<span style="color:#2d7d2d">user@lindows:~$</span>' +
+          '<input id="termInput" style="flex:1;background:transparent;border:none;color:#ccc;outline:none;font-family:monospace;font-size:14px;margin-left:4px" autofocus />' +
+        '</div>' +
+      '</div>';
+
+    var out = Utils.$('termOutput');
+    out.innerHTML = history.map(function(l) { return '<div>' + Utils.escapeHtml(l) + '</div>'; }).join('');
+    out.scrollTop = out.scrollHeight;
+
+    var input = Utils.$('termInput');
+    input.value = '';
+    input.focus();
+
+    input.onkeyup = function(e) {
+      if (e.key === 'Enter') {
+        cmdHistory.push(input.value);
+        cmdIdx = -1;
+        runCmd(input.value);
+        render();
+      } else if (e.key === 'ArrowUp') {
+        if (cmdHistory.length > 0) {
+          cmdIdx = Math.max(0, cmdIdx === -1 ? cmdHistory.length - 1 : cmdIdx - 1);
+          input.value = cmdHistory[cmdIdx] || '';
+        }
+      } else if (e.key === 'ArrowDown') {
+        if (cmdIdx < cmdHistory.length - 1) { cmdIdx++; input.value = cmdHistory[cmdIdx]; }
+        else { cmdIdx = -1; input.value = ''; }
+      }
+    };
+  }
+  render();
+}
+
+// --- SNAKE ---
+function renderSnake(win) {
+  var body = win._body;
+  var grid = 15;
+  var cols = 18, rows = 18;
+  var snake = [{x: 5, y: 5}];
+  var dir = {x: 1, y: 0};
+  var nextDir = {x: 1, y: 0};
+  var food = {x: 10, y: 10};
+  var score = 0;
+  var gameOver = false;
+  var paused = false;
+  var loop = null;
+
+  function spawnFood() {
+    food = {x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows)};
+    for (var i = 0; i < snake.length; i++) { if (snake[i].x === food.x && snake[i].y === food.y) spawnFood(); }
+  }
+
+  function step() {
+    if (gameOver || paused) return;
+    dir = {x: nextDir.x, y: nextDir.y};
+    var head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+    if (head.x < 0 || head.x >= cols || head.y < 0 || head.y >= rows) { gameOver = true; render(); return; }
+    for (var i = 0; i < snake.length; i++) { if (snake[i].x === head.x && snake[i].y === head.y) { gameOver = true; render(); return; } }
+    snake.unshift(head);
+    if (head.x === food.x && head.y === food.y) { score += 10; spawnFood(); } else snake.pop();
+    render();
+  }
+
+  function render() {
+    var cell = Math.min(Math.floor((body.clientWidth - 20) / cols), Math.floor((body.clientHeight - 60) / rows));
+    var w = cell * cols, h = cell * rows;
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;align-items:center;height:100%;background:#1a1a2e;padding:10px">' +
+        '<div style="color:white;font-family:monospace;margin-bottom:4px;font-size:14px">Score: ' + score + '</div>' +
+        '<canvas id="snakeCanvas" width="' + w + '" height="' + h + '" style="border:1px solid #444"></canvas>' +
+        (gameOver ? '<div style="color:#f44336;margin-top:8px;font-size:16px;cursor:pointer" id="snakeRestart">Game Over! Click to restart</div>' : '') +
+        '<div style="color:#888;font-size:12px;margin-top:4px">Arrow keys to move | Space to pause</div>' +
+      '</div>';
+
+    var canvas = Utils.$('snakeCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#1a1a2e';
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.fillStyle = '#2d7d2d';
+    snake.forEach(function(s, i) {
+      ctx.fillStyle = i === 0 ? '#4caf50' : '#2d7d2d';
+      ctx.fillRect(s.x * cell + 1, s.y * cell + 1, cell - 2, cell - 2);
+    });
+
+    ctx.fillStyle = '#f44336';
+    ctx.fillRect(food.x * cell + 1, food.y * cell + 1, cell - 2, cell - 2);
+
+    var restart = Utils.$('snakeRestart');
+    if (restart) restart.onclick = function() { clearInterval(loop); snake = [{x: 5, y: 5}]; dir = {x: 1, y: 0}; nextDir = {x: 1, y: 0}; score = 0; gameOver = false; spawnFood(); loop = setInterval(step, 150); render(); };
+  }
+
+  document.onkeydown = function(e) {
+    if (e.key === 'ArrowUp' && dir.y !== 1) nextDir = {x: 0, y: -1};
+    else if (e.key === 'ArrowDown' && dir.y !== -1) nextDir = {x: 0, y: 1};
+    else if (e.key === 'ArrowLeft' && dir.x !== 1) nextDir = {x: -1, y: 0};
+    else if (e.key === 'ArrowRight' && dir.x !== -1) nextDir = {x: 1, y: 0};
+    else if (e.key === ' ') { paused = !paused; }
+  };
+
+  spawnFood();
+  loop = setInterval(step, 150);
+  render();
+}
+
+// --- WEATHER ---
+function renderWeather(win) {
+  var body = win._body;
+  var cities = [
+    { name: 'New York', temp: 72, icon: 'sunny' },
+    { name: 'London', temp: 56, icon: 'cloudy' },
+    { name: 'Tokyo', temp: 68, icon: 'rainy' },
+    { name: 'Sydney', temp: 80, icon: 'sunny' },
+    { name: 'Paris', temp: 62, icon: 'cloudy' },
+    { name: 'Moscow', temp: 45, icon: 'snowy' },
+    { name: 'Dubai', temp: 95, icon: 'sunny' },
+    { name: 'Toronto', temp: 50, icon: 'snowy' },
+  ];
+  var current = 0;
+
+  function getIcon(type) {
+    if (type === 'sunny') return '<svg viewBox="0 0 24 24" fill="#ff9800" width="48" height="48"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>';
+    if (type === 'cloudy') return '<svg viewBox="0 0 24 24" fill="#888" width="48" height="48"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+    if (type === 'rainy') return '<svg viewBox="0 0 24 24" fill="#2196f3" width="48" height="48"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM7 14c.55 0 1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1zm5 0c.55 0 1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1zm5 0c.55 0 1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1v-6c0-.55.45-1 1-1z"/></svg>';
+    if (type === 'snowy') return '<svg viewBox="0 0 24 24" fill="#90caf9" width="48" height="48"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+    return '';
+  }
+
+  function render() {
+    var c = cities[current];
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;font-family:sans-serif">' +
+        '<div style="display:flex;flex-wrap:wrap;gap:4px;padding:8px;justify-content:center;flex-shrink:0">' +
+          cities.map(function(ci, i) { return '<button class="cityBtn" data-idx="' + i + '" style="padding:4px 10px;border-radius:12px;border:none;cursor:pointer;font-size:12px;background:' + (i === current ? '#3e3c91' : '#333') + ';color:white">' + ci.name + '</button>'; }).join('') +
+        '</div>' +
+        '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">' +
+          getIcon(c.icon) +
+          '<div style="font-size:3em;font-weight:300;margin:8px 0">' + c.temp + '&deg;F</div>' +
+          '<div style="font-size:1.2em;color:#aaa">' + c.name + '</div>' +
+        '</div>' +
+      '</div>';
+    Utils.qsa('.cityBtn', body).forEach(function(el) { el.onclick = function() { current = parseInt(el.getAttribute('data-idx')); render(); }; });
+  }
+  render();
+}
+
+// --- MUSIC ---
+function renderMusic(win) {
+  var body = win._body;
+  var songs = [
+    { title: 'Bohemian Rhapsody', artist: 'Queen', color: '#e91e63' },
+    { title: 'Hotel California', artist: 'Eagles', color: '#9c27b0' },
+    { title: 'Stairway to Heaven', artist: 'Led Zeppelin', color: '#3f51b5' },
+    { title: 'Imagine', artist: 'John Lennon', color: '#009688' },
+    { title: 'Billie Jean', artist: 'Michael Jackson', color: '#ff5722' },
+    { title: 'Smells Like Teen Spirit', artist: 'Nirvana', color: '#795548' },
+    { title: 'Sweet Child O\' Mine', artist: 'Guns N\' Roses', color: '#607d8b' },
+    { title: 'Yesterday', artist: 'The Beatles', color: '#4caf50' },
+  ];
+  var current = 0;
+
+  function render() {
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;height:100%;background:#1a1a2e;color:white;font-family:sans-serif">' +
+        '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px">' +
+          '<div style="width:120px;height:120px;border-radius:50%;background:' + songs[current].color + ';display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:3em">&#9835;</div>' +
+          '<div style="font-size:1.2em;text-align:center">' + Utils.escapeHtml(songs[current].title) + '</div>' +
+          '<div style="font-size:0.9em;color:#aaa;margin-top:4px">' + Utils.escapeHtml(songs[current].artist) + '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:16px;padding:16px;justify-content:center;flex-shrink:0">' +
+          '<button id="musicPrev" style="background:transparent;border:2px solid #555;color:white;border-radius:50%;width:48px;height:48px;font-size:1.2em;cursor:pointer">&#9664;</button>' +
+          '<button id="musicPlay" style="background:#3e3c91;border:none;color:white;border-radius:50%;width:56px;height:56px;font-size:1.5em;cursor:pointer">&#9654;</button>' +
+          '<button id="musicNext" style="background:transparent;border:2px solid #555;color:white;border-radius:50%;width:48px;height:48px;font-size:1.2em;cursor:pointer">&#9654;</button>' +
+        '</div>' +
+        '<div style="max-height:150px;overflow-y:auto;border-top:1px solid #333">' +
+          songs.map(function(s, i) { return '<div class="songItem" data-idx="' + i + '" style="padding:8px 16px;cursor:pointer;display:flex;align-items:center;' + (i === current ? 'background:rgba(62,60,145,0.4)' : '') + '"><div style="width:8px;height:8px;border-radius:50%;background:' + s.color + ';margin-right:12px"></div><div><div>' + Utils.escapeHtml(s.title) + '</div><div style="font-size:12px;color:#888">' + Utils.escapeHtml(s.artist) + '</div></div></div>'; }).join('') +
+        '</div>' +
+      '</div>';
+
+    Utils.qsa('.songItem', body).forEach(function(el) { el.onclick = function() { current = parseInt(el.getAttribute('data-idx')); render(); }; });
+    Utils.$('musicPlay').onclick = function() { /* play/pause - no actual audio files */ };
+    Utils.$('musicNext').onclick = function() { current = (current + 1) % songs.length; render(); };
+    Utils.$('musicPrev').onclick = function() { current = (current - 1 + songs.length) % songs.length; render(); };
+  }
+  render();
+}
+
+// --- TIC TAC TOE ---
+function renderTicTacToe(win) {
+  var body = win._body;
+  var board = ['', '', '', '', '', '', '', '', ''];
+  var player = 'X';
+  var gameOver = false;
+  var winner = null;
+
+  function checkWin() {
+    var lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    for (var i = 0; i < lines.length; i++) {
+      var a = lines[i][0], b = lines[i][1], c = lines[i][2];
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) { winner = board[a]; gameOver = true; return; }
+    }
+    if (board.indexOf('') === -1) { winner = 'Tie'; gameOver = true; }
+  }
+
+  function aiMove() {
+    var empty = [];
+    for (var i = 0; i < 9; i++) { if (board[i] === '') empty.push(i); }
+    if (empty.length === 0) return;
+    var idx = empty[Math.floor(Math.random() * empty.length)];
+    board[idx] = 'O';
+    checkWin();
+    player = 'X';
+  }
+
+  function render() {
+    body.innerHTML =
+      '<div style="display:flex;flex-direction:column;align-items:center;height:100%;background:#1a1a2e;padding:16px">' +
+        '<div style="color:white;font-size:1.2em;margin-bottom:8px;font-family:sans-serif">' +
+          (gameOver ? (winner === 'Tie' ? 'Tie!' : winner + ' wins!') : (player === 'X' ? 'Your turn (X)' : 'Computer thinking...')) +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#444;padding:4px;border-radius:4px">' +
+          board.map(function(cell, i) {
+            var bg = cell === 'X' ? '#3e3c91' : cell === 'O' ? '#2d7d2d' : '#fff';
+            return '<div class="tttCell" data-idx="' + i + '" style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;background:' + bg + ';cursor:pointer;font-size:2em;color:white;border-radius:4px;font-family:sans-serif">' + cell + '</div>';
+          }).join('') +
+        '</div>' +
+        (gameOver ? '<button id="tttRestart" style="margin-top:12px;padding:8px 24px;background:#3e3c91;color:white;border:none;border-radius:4px;cursor:pointer;font-size:1em">Play Again</button>' : '') +
+      '</div>';
+
+    Utils.qsa('.tttCell', body).forEach(function(el) {
+      el.onclick = function() {
+        if (gameOver || player !== 'X') return;
+        var idx = parseInt(el.getAttribute('data-idx'));
+        if (board[idx] !== '') return;
+        board[idx] = 'X';
+        checkWin();
+        if (!gameOver) { player = 'O'; render(); setTimeout(aiMove, 300); }
+        render();
+      };
+    });
+    var restart = Utils.$('tttRestart');
+    if (restart) restart.onclick = function() { board = ['', '', '', '', '', '', '', '', '']; player = 'X'; gameOver = false; winner = null; render(); };
+  }
+  render();
+}
+
+// --- ABOUT ---
+function renderAbout(win) {
+  var body = win._body;
+  body.innerHTML =
+    '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;font-family:sans-serif;padding:32px;text-align:center">' +
+      '<div style="font-size:4em;margin-bottom:8px">&#9783;</div>' +
+      '<div style="font-size:1.8em;font-weight:300">Lindows OS</div>' +
+      '<div style="color:#888;margin-top:4px">Version 1.0</div>' +
+      '<div style="color:#666;margin-top:16px;font-size:0.9em;max-width:300px">A minimal operating system for browser built with vanilla JavaScript</div>' +
+      '<div style="color:#555;margin-top:24px;font-size:0.8em">&#169; 2026 Lindows</div>' +
+    '</div>';
 }
 
 // ============================================================

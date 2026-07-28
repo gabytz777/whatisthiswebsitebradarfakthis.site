@@ -699,18 +699,18 @@ var Promotions = [
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/></svg>', text: 'Dropbox', action: 'https://www.dropbox.com/' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>', text: 'Facebook', action: 'https://www.facebook.com/' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', text: 'Firefox', action: 'https://www.mozilla.org/firefox/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', text: 'Mindows', action: 'https://github.com/' },
+
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6 10.5c0 3.31-2.69 6-6 6s-6-2.69-6-6 2.69-6 6-6 6 2.69 6 6z"/></svg>', text: 'Skype', action: 'https://www.skype.com/' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>', text: 'Weather', action: 'https://weather.com/' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2H6V2zm4 4h4v2h-4V6zm0 4h4v2h-4v-2zm-4 4h12v2H6v-2zm0 4h12v2H6v-2z"/></svg>', text: 'Word', action: 'https://www.microsoft.com/microsoft-365/word' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Steam', action: 'https://store.steampowered.com/' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Camera' },
+  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Camera', action: 'https://www.microsoft.com/store/camera' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>', text: 'Windows 11', action: 'https://www.microsoft.com/windows/windows-11' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/></svg>', text: 'News', action: 'https://www.bing.com/news' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>', text: 'Movies' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>', text: 'Xbox' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>', text: 'Music' },
-  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 1L4 9.5V20c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9.5L12.5 1zM12 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>', text: 'Money' },
+  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>', text: 'Movies', action: 'https://www.microsoft.com/store/movies' },
+  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>', text: 'Xbox', action: 'https://www.xbox.com/' },
+  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>', text: 'Music', action: 'https://www.microsoft.com/store/music' },
+  { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 1L4 9.5V20c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9.5L12.5 1zM12 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>', text: 'Money', action: 'https://www.microsoft.com/store/money' },
   { icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>', text: 'Gallery', action: 'https://onedrive.live.com/' },
 ];
 
@@ -1272,29 +1272,186 @@ function renderNotepad(win) {
 
 // --- CALCULATOR ---
 function renderCalculator(win) {
-  win._body.innerHTML =
-    '<div class="Calculator">' +
-      '<div><svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><p>Oops! Mindows must be broken!!</p></div>' +
-      '<div><div><p>There seems to be no Calculator installed on the system.</p><p>But wait... you can always add it and send a pull request.</p></div></div>' +
-    '</div>';
+  var body = win._body;
+  var display = '0';
+  var expression = '';
+  var result = null;
+  var justEvaluated = false;
+
+  function render() {
+    body.innerHTML =
+      '<div class="Calculator" style="display:flex;flex-direction:column;height:100%">' +
+        '<div style="background:#1a1a2e;color:white;text-align:right;padding:20px 16px;font-size:2em;font-family:monospace;min-height:72px;display:flex;flex-direction:column;justify-content:flex-end">' +
+          '<div style="font-size:0.5em;color:#888;min-height:20px">' + Utils.escapeHtml(expression) + '</div>' +
+          '<div>' + Utils.escapeHtml(display) + '</div>' +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(4,1fr);flex:1;gap:1px;background:#ccc;padding:1px">' +
+          '<button data-action="clear" style="grid-column:span 2;background:#f44336;color:white;border:none;font-size:1.2em;cursor:pointer">C</button>' +
+          '<button data-action="backspace" style="background:#ff9800;color:white;border:none;font-size:1.2em;cursor:pointer">DEL</button>' +
+          '<button data-action="op" data-value="/" style="background:#3e3c91;color:white;border:none;font-size:1.2em;cursor:pointer">/</button>' +
+          '<button data-action="num" data-value="7" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">7</button>' +
+          '<button data-action="num" data-value="8" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">8</button>' +
+          '<button data-action="num" data-value="9" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">9</button>' +
+          '<button data-action="op" data-value="*" style="background:#3e3c91;color:white;border:none;font-size:1.2em;cursor:pointer">*</button>' +
+          '<button data-action="num" data-value="4" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">4</button>' +
+          '<button data-action="num" data-value="5" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">5</button>' +
+          '<button data-action="num" data-value="6" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">6</button>' +
+          '<button data-action="op" data-value="-" style="background:#3e3c91;color:white;border:none;font-size:1.2em;cursor:pointer">-</button>' +
+          '<button data-action="num" data-value="1" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">1</button>' +
+          '<button data-action="num" data-value="2" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">2</button>' +
+          '<button data-action="num" data-value="3" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">3</button>' +
+          '<button data-action="op" data-value="+" style="background:#3e3c91;color:white;border:none;font-size:1.2em;cursor:pointer">+</button>' +
+          '<button data-action="num" data-value="0" style="grid-column:span 2;background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">0</button>' +
+          '<button data-action="decimal" style="background:#e0e0e0;border:none;font-size:1.2em;cursor:pointer">.</button>' +
+          '<button data-action="equals" style="background:#2d7d2d;color:white;border:none;font-size:1.2em;cursor:pointer">=</button>' +
+        '</div>' +
+      '</div>';
+
+    Utils.qsa('[data-action]', body).forEach(function(btn) {
+      btn.onclick = function() {
+        var action = btn.getAttribute('data-action');
+        switch (action) {
+          case 'num':
+            if (justEvaluated) { display = ''; justEvaluated = false; }
+            display = display === '0' ? btn.getAttribute('data-value') : display + btn.getAttribute('data-value');
+            break;
+          case 'decimal':
+            if (justEvaluated) { display = '0.'; justEvaluated = false; return; }
+            if (display.indexOf('.') === -1) display += '.';
+            break;
+          case 'op':
+            if (expression && display) {
+              expression = expression + display + ' ' + btn.getAttribute('data-value') + ' ';
+            } else if (display) {
+              expression = display + ' ' + btn.getAttribute('data-value') + ' ';
+            }
+            display = '0';
+            justEvaluated = false;
+            break;
+          case 'equals':
+            if (expression && display) {
+              try {
+                var fullExpr = expression + display;
+                result = Function('"use strict"; return (' + fullExpr + ')')();
+                expression = fullExpr + ' =';
+                display = String(result);
+                justEvaluated = true;
+              } catch(e) {
+                display = 'Error';
+                justEvaluated = true;
+              }
+            }
+            break;
+          case 'clear':
+            display = '0';
+            expression = '';
+            result = null;
+            justEvaluated = false;
+            break;
+          case 'backspace':
+            if (!justEvaluated) display = display.length > 1 ? display.slice(0, -1) : '0';
+            break;
+        }
+        render();
+      };
+    });
+  }
+
+  render();
 }
 
 // --- CALENDAR ---
 function renderCalendar(win) {
-  win._body.innerHTML =
-    '<div class="Calender">' +
-      '<div><svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><p>Oops! Mindows must be broken!!</p></div>' +
-      '<div><div><p>There seems to be no Calender installed on the system.</p><p>But wait... you can always add it and send a pull request.</p></div></div>' +
-    '</div>';
+  var body = win._body;
+  var today = new Date();
+  var viewYear = today.getFullYear();
+  var viewMonth = today.getMonth();
+
+  var MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  function render() {
+    var firstDay = new Date(viewYear, viewMonth, 1).getDay();
+    var daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    var todayStr = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
+
+    var cells = '';
+    for (var i = 0; i < firstDay; i++) cells += '<div></div>';
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dStr = viewYear + '-' + viewMonth + '-' + d;
+      var isToday = dStr === todayStr ? ' style="background:#3e3c91;color:white;border-radius:50%"' : '';
+      cells += '<div' + isToday + ' style="text-align:center;padding:8px 0;font-size:14px">' + d + '</div>';
+    }
+
+    body.innerHTML =
+      '<div class="Calendar" style="display:flex;flex-direction:column;height:100%;font-family:sans-serif">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1a1a2e;color:white">' +
+          '<button id="calPrev" style="background:transparent;border:none;color:white;font-size:1.5em;cursor:pointer">&lt;</button>' +
+          '<span style="font-size:1.2em;font-weight:600">' + MONTH_NAMES[viewMonth] + ' ' + viewYear + '</span>' +
+          '<button id="calNext" style="background:transparent;border:none;color:white;font-size:1.5em;cursor:pointer">&gt;</button>' +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(7,1fr);background:#e0e0e0;padding:1px">' +
+          DAY_NAMES.map(function(n) { return '<div style="text-align:center;padding:8px 0;font-weight:600;font-size:12px;background:white">' + n + '</div>'; }).join('') +
+          cells +
+        '</div>' +
+        '<div style="flex:1;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px">' +
+          'Mindows Calendar' +
+        '</div>' +
+      '</div>';
+
+    Utils.$('calPrev').onclick = function() {
+      viewMonth--;
+      if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+      render();
+    };
+    Utils.$('calNext').onclick = function() {
+      viewMonth++;
+      if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+      render();
+    };
+  }
+
+  render();
 }
 
 // --- SETTINGS ---
 function renderSettings(win) {
-  win._body.innerHTML =
-    '<div class="Settings">' +
-      '<div><svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg><p>Oops! Mindows must be broken!!</p></div>' +
-      '<div><div><p>There seems to be no Settings installed on the system.</p><p>But wait... you can always add it and send a pull request.</p></div></div>' +
-    '</div>';
+  var body = win._body;
+  var currentBg = store.get('account.settings.background');
+
+  function render() {
+    body.innerHTML =
+      '<div class="Settings" style="display:flex;flex-direction:column;height:100%;font-family:sans-serif">' +
+        '<div style="padding:16px;background:#1a1a2e;color:white">' +
+          '<h2 style="font-size:1.2em;font-weight:600">Settings</h2>' +
+        '</div>' +
+        '<div style="padding:16px;overflow-y:auto;flex:1">' +
+          '<h3 style="font-size:1em;margin-bottom:12px;color:#333">Personalization</h3>' +
+          '<p style="font-size:14px;color:#666;margin-bottom:12px">Choose your wallpaper</p>' +
+          '<div id="wallpaperGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px">' +
+            WALLPAPERS.list.map(function(wp, i) {
+              var selected = wp.name === currentBg ? ' style="border:3px solid #3e3c91;box-shadow:0 0 8px rgba(62,60,145,0.5)"' : ' style="border:3px solid transparent"';
+              return '<div class="wallpaperOption" data-wallpaper="' + wp.name + '"' + selected + ' style="cursor:pointer;border-radius:4px;overflow:hidden">' +
+                '<div style="height:100px;background:url(public/images/' + wp.name + ');background-size:cover;background-position:center"></div>' +
+                '<div style="padding:8px;font-size:12px;text-align:center;background:#f5f5f5;color:#333">' + Utils.escapeHtml(wp.desc) + '</div>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    Utils.qsa('.wallpaperOption', body).forEach(function(el) {
+      el.onclick = function() {
+        var wp = el.getAttribute('data-wallpaper');
+        currentBg = wp;
+        store.set('account.settings.background', wp);
+        renderDesktop();
+        render();
+      };
+    });
+  }
+
+  render();
 }
 
 // ============================================================

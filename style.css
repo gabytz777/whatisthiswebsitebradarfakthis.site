@@ -323,18 +323,12 @@ body { font-family: var(--defaultFont); background: rgb(1, 1, 16); user-select: 
 }
 .NotepadContent textarea:focus { outline: none; }
 
-/* === PLACEHOLDER APPS === */
-.Calculator, .Calender, .Settings { display: flex; }
-.Calculator > div, .Calender > div, .Settings > div {
-  flex: 1; padding: 1rem; display: flex; flex-direction: column;
-}
-.Calculator > div:first-child, .Calender > div:first-child, .Settings > div:first-child {
-  border-right: 2px solid lightgray; font-size: 2.5em;
-}
-.Calculator > div:last-child, .Calender > div:last-child, .Settings > div:last-child {
-  font-size: 1em; justify-content: center;
-}
-.Calculator p, .Calender p, .Settings p { margin-bottom: 8px; }
+/* === CALCULATOR === */
+.Calculator button:active { filter: brightness(0.85); }
+.Calculator button:hover { opacity: 0.9; }
+
+/* === CALENDAR === */
+.Calendar { background: white; }
 
 /* === LOADING OVERLAY === */
 #loadingOverlay {
